@@ -66,7 +66,7 @@ def load_models(config_path="configs/inference.yaml"):
     face_analysis = os.path.join(config.misc_model_dir, "misc/face_analysis")
     vocal_separator = os.path.join(config.misc_model_dir, "misc/vocal_separator/Kim_Vocal_2.onnx")
 
-    output_dir = getattr(config, "output_dir", "default_output")
+    output_dir = getattr(config, "output_dir", "outputs")
     os.makedirs(output_dir, exist_ok=True)
 
     return pipeline, audio_proj, config, face_analysis, vocal_separator, output_dir, device
